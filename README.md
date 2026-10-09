@@ -1,8 +1,8 @@
-# Crowd Commander — Mikkel Edition
+# Crowd Commander — Mikkel Edition 2.0
 
-Reklamefrit mobilspil med 10 baner, soldatertæller, 3D-grafik, Mikkel som boss og sjove replikker.
+Reklamefrit, mobilvenligt 3D-crowd-runner spil med 10 baner, porte, soldater og Mikkel som boss på alle baner.
 
-## Lokal udvikling
+## Start lokalt
 
 ```bash
 npm install
@@ -10,7 +10,14 @@ npm run dev
 ```
 
 ## Vercel
-Importér GitHub-repository i Vercel. Framework: Vite. Build: `npm run build`. Output: `dist`.
 
-## Opdatering
-Upload de ændrede `index.html`, `src/main.js`, `public/mikkel.png` og `README.md` til repositoryet.
+Importér repositoryet. Framework: Vite. Build: `npm run build`. Output: `dist`.
+
+## Ændringer i v2.0
+
+- Markant nemmere bane 1 og 2; blidere sværhedsgrad på senere baner.
+- Soldater med mere karakteristisk tegnefilmslook, farverig bane og dekorative omgivelser.
+- Tydelig soldat-tæller, Mikkel på hver bane, ingen reklamer.
+- Stadig Three.js for kompatibilitet med det eksisterende Vercel-projekt. En komplet udskiftning til Babylon.js og importerede GLB-modeller er ikke en del af denne version.
+
+Figurer og baner er originale, inspireret af farverige mobilspil, ikke kopieret fra Stumble Guys.
