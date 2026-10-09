@@ -1,23 +1,23 @@
-# Crowd Commander — Mikkel Edition 2.0
+# Crowd Commander 3.0 – GLB Animation Edition
 
-Reklamefrit, mobilvenligt 3D-crowd-runner spil med 10 baner, porte, soldater og Mikkel som boss på alle baner.
+Denne version bygger på fase 5 og indeholder en **ægte glTF 2.0/GLB-figur** (`public/models/commander.glb`) med indlejrede keyframe-animationer: `Run`, `Idle`, `Celebrate`. Figuren er original og fremstillet til dette projekt (ingen tredjepartsaktiver).
 
-## Start lokalt
+## Integration
+- `GLTFLoader` indlæser GLB-filen lokalt fra `public/models`. Ingen ekstern CDN eller API.
+- De første 18 synlige soldater bruger GLB-kloner og `AnimationMixer` til rigtig keyframe-animation.
+- Resten af hæren bruger den eksisterende GPU-instancing, så store hære stadig er hurtige.
+- Ved indlæsningsfejl fortsætter spillet med de tidligere animerede instanced-soldater.
+- De 10 baner, Mikkel-bosserne, sværhedsgrad og touchstyring er bevaret.
 
+## Lokal test
 ```bash
 npm install
+npm run build
 npm run dev
 ```
+Åbn i Safari og kontrollér især de første 18 soldater, deres løbeanimation og FPS ved store hære.
 
-## Vercel
+## Begrænsninger
+Modellen er en original stiliseret low-poly GLB-model med ægte animationer, **ikke** en kommerciel AAA-karakter eller en fuldt skinned humanoid rig. For en større visuel forbedring kan GLB-modellen senere udskiftes med en kunstnerproduceret, skinned/rigget karakter. `Idle` og `Celebrate` er indlejret og klar til senere at blive aktiveret ved pause/sejr; under gameplay afspilles `Run`.
 
-Importér repositoryet. Framework: Vite. Build: `npm run build`. Output: `dist`.
-
-## Ændringer i v2.0
-
-- Markant nemmere bane 1 og 2; blidere sværhedsgrad på senere baner.
-- Soldater med mere karakteristisk tegnefilmslook, farverig bane og dekorative omgivelser.
-- Tydelig soldat-tæller, Mikkel på hver bane, ingen reklamer.
-- Stadig Three.js for kompatibilitet med det eksisterende Vercel-projekt. En komplet udskiftning til Babylon.js og importerede GLB-modeller er ikke en del af denne version.
-
-Figurer og baner er originale, inspireret af farverige mobilspil, ikke kopieret fra Stumble Guys.
+Der er ikke foretaget fysisk iPhone-test.
